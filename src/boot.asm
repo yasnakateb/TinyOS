@@ -5,9 +5,17 @@
 
 %include "bios.h"
 
+start:
+    xor ax, ax
+    mov ds, ax
+    cld
+ 
+    BiosPrint message
+    
 hang:                           ;;; Infinite loop
     jmp hang
     
+    message   db 'Have fun, you guys', 13, 10, 0
     times 510-($-$$) db 0       ;;; Fill with 510 zeros
     db 0x55
     db 0xAA
