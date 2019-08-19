@@ -3,12 +3,12 @@
 Bios_Print:
     pusha
 print_char:
-    mov al, [si] 
+    mov al, [bx] 
     or al, al
     jz done
     mov ah, 0x0e
     int 0x10 
-    add si, 1
+    add bx, 1
     jmp print_char
 done:
     mov ah, 0x0e
