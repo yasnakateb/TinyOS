@@ -14,6 +14,8 @@ start:
     
 hang:                           ;;; Infinite loop
     jmp hang
+
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
     
     message   db 'Have fun, you guys', 13, 10, 0
     times 510-($-$$) db 0       ;;; Fill with 510 zeros
