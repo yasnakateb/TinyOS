@@ -11,23 +11,24 @@ start:
  
     mov si, message
     call Bios_Print
-    mov si, msg_read_from_disk
+    mov si, msg_Read_From_Disk
     call Bios_Print
 
+    jmp $
 
-%include 'print.h'
+%include 'print.asm'
 
-hang:                           ;;; Infinite loop
-    jmp hang
 
     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-    
-    message   db 'Have fun, you guys', 13, 10, 0
-    msg_read_from_disk db 'Reading data from a disk in order to run the kernel', 13, 10, 0
 
+    message   db 'Have fun, you guys', 13, 10, 0
+    msg_Read_From_Disk db 'Reading data from a disk in order to run the kernel', 13, 10, 0
+      
     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
     times 510-($-$$) db 0       ;;; Fill with 510 zeros
     db 0x55
     db 0xAA
+    
+
     
