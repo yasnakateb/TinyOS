@@ -16,13 +16,13 @@ start:
 
     jmp $
 
-%include 'print.asm'
+%include 'print.h'
 
 
     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-    message   db 'Have fun, you guys', 13, 10, 0
-    msg_Read_From_Disk db 'Reading data from a disk in order to run the kernel', 13, 10, 0
+    message   db 'Have fun, you guys', 0
+    msg_Read_From_Disk db 'Reading data from a disk in order to run the kernel', 0
       
     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
