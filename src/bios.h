@@ -1,6 +1,6 @@
 
 %macro BiosPrint 1
-                mov si, word %1
+    mov si, word %1
 ch_loop:lodsb
    or al, al
    jz done
