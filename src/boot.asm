@@ -2,6 +2,8 @@
     ;;;The code in the boot sector of the disk is loaded by the BIOS at 0000:7c00
     ;;;Machine starts in Real Mode     
 
+%include "bios.h"
+
 hang:                           ;;; Infinite loop
     jmp hang
     
