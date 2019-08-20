@@ -34,8 +34,8 @@ start:
     jmp $
 
 
-%include 'print.h'
-%include 'disk.h'
+%include 'print.inc'
+%include 'disk.inc'
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
