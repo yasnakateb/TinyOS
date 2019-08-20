@@ -12,12 +12,12 @@ EFLAGS=-boot c
 FORMAT=bin 
 
 #TOOL OUTPUT
-BOOTSECTOR=bin/boot.bin
+BOOT=bin/boot.bin
 
 
 ###############################################################################
 run: 
-	$(EMULATOR) $(BOOTSECTOR) $(EFLAGS)
+	$(EMULATOR) $(BOOT) $(EFLAGS)
 
-$(BOOTSECTOR):
+$(BOOT):
 	$(NASM) -i $(INCLUDE) -f $(FORMAT) $(SRC) -o $(BIN)/$@
