@@ -16,7 +16,7 @@ start:
     call Bios_Print
     mov bx, msg_Read_From_Disk
     call Bios_Print
-                                ;;; Set the stack safely away from us
+                                
     mov bp, 0x8000                      
     mov sp, bp
 
