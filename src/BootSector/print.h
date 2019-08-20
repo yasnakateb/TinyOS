@@ -2,6 +2,7 @@
 
 Bios_Print:
     pusha
+
 print_char:
     mov al, [bx] 
     or al, al
@@ -10,15 +11,15 @@ print_char:
     int 0x10 
     add bx, 1
     jmp print_char
+
 done:
     mov ah, 0x0e
-    mov al, 0x0a ; newline char
+    mov al, 0x0a                ;;; Newline char
     int 0x10
-    mov al, 0x0d ; carriage return
+    mov al, 0x0d                ;;; Carriage return
     int 0x10
     popa
     ret
-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -37,7 +38,6 @@ hex_loop:
     add al, 7 
 
 position:
-    
     mov bx, hex_number + 5 
     sub bx, cx  
     mov [bx], al
