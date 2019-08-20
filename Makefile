@@ -19,6 +19,5 @@ BOOTSECTOR=bin/boot.bin
 run: 
 	$(EMULATOR) $(BOOTSECTOR) $(EFLAGS)
 
-
 $(BOOTSECTOR):
 	$(NASM) -i $(INCLUDE) -f $(FORMAT) $(SRC) -o $(BIN)/$@
