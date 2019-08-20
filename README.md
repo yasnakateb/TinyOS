@@ -1,6 +1,6 @@
 # Tiny OS
 
- 😍 The goal of this project is to write an os from scratch.
+ 😍 The goal of this project is to write an OS from scratch.
 
 
 -----
