@@ -6,13 +6,13 @@ Real_Mode_Print:
 Real_Mode_Print_Char:
     mov al, [bx] 
     or al, al
-    jz Done
+    jz Real_Mode_Done
     mov ah, 0x0e
     int 0x10 
     add bx, 1
     jmp Real_Mode_Print_Char
 
-Done:
+Real_Mode_Done:
     mov ah, 0x0e
     mov al, 0x0a                ;;; Newline char
     int 0x10
