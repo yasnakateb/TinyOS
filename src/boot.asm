@@ -8,7 +8,7 @@
 
 [org 0x7c00]
 
-start:
+Start:
     mov bp, 0x9000                      
     mov sp, bp
 
@@ -24,7 +24,6 @@ start:
 %include 'include/protected_mode/switch.inc'
 %include 'include/protected_mode/gdt.inc'
 
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
 ;;; 32-bit Protected Mode
@@ -36,7 +35,6 @@ Begin_Protected_Mode:           ;;; After the switch we will get here
     mov ebx, msg_Protected_Mode
     call Protected_Mode_Print
     jmp $
-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
