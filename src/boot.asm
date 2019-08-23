@@ -15,6 +15,7 @@ start:
     mov bx, msg_Real_Mode
     call Real_Mode_Print
 
+    call Switch_To_Protected_Mode
     jmp $
 
 
