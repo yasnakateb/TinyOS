@@ -2,7 +2,8 @@
 ;;; BOOT SECTOR
 ;;; Boot sector loaded by BIOS is 512 bytes
 ;;; The code in the boot sector of the disk is loaded by the BIOS at 0000:7c00
-;;; Machine starts in Real Mode 
+;;; Machine starts in Real Mode. Then it switches from 16-bit real mode 
+;;; into 32-bit protected mode.
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [org 0x7c00]
