@@ -35,7 +35,7 @@ start:
     jmp $
 
 
-%include 'print.inc'
+%include 'real_mode_print.inc'
 %include 'disk.inc'
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
