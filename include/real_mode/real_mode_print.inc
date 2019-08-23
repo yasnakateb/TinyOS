@@ -3,16 +3,16 @@
 Real_Mode_Print:
     pusha
 
-print_char:
+Real_Mode_Print_Char:
     mov al, [bx] 
     or al, al
-    jz done
+    jz Done
     mov ah, 0x0e
     int 0x10 
     add bx, 1
-    jmp print_char
+    jmp Real_Mode_Print_Char
 
-done:
+Done:
     mov ah, 0x0e
     mov al, 0x0a                ;;; Newline char
     int 0x10
