@@ -40,9 +40,7 @@ start:
     times 510-($-$$) db 0       ;;; Fill with 510 zeros
     db 0x55
     db 0xAA                     ;;; Boot sector
-    times 256 dw 0xaebe         ;;; Sector 2 
-    times 256 dw 0xcede         ;;; Sector 3 
-
+    
 
   
 
