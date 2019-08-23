@@ -12,6 +12,8 @@ start:
     mov bp, 0x9000                      
     mov sp, bp
 
+    mov bx, msg_Real_Mode
+    call Real_Mode_Print
 
     jmp $
 
