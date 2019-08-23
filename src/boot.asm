@@ -9,9 +9,7 @@
 [org 0x7c00]
 
 start:
-    
-                                
-    mov bp, 0x8000                      
+    mov bp, 0x9000                      
     mov sp, bp
 
     jmp $
@@ -29,8 +27,7 @@ start:
 ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
     
-    message   db 'Have fun, you guys', 0
-    msg_Read_From_Disk db 'Reading data from a disk in order to run the kernel', 0
+    
     
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
