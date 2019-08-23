@@ -27,5 +27,5 @@ Protected_Mode:
     mov ebp, 0x90000            ;;; Update the stack right at the top of the free space
     mov esp, ebp
 
-    call BEGIN_Protected_Mode     
+    call Begin_Protected_Mode     
 

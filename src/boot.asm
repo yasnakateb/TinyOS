@@ -32,7 +32,7 @@ start:
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
                                                                 
 [bits 32]
-BEGIN_Protected_Mode:           ;;; After the switch we will get here
+Begin_Protected_Mode:           ;;; After the switch we will get here
     mov ebx, msg_Protected_Mode
     call Protected_Mode_Print
     jmp $
