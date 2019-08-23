@@ -35,7 +35,7 @@ start:
     jmp $
 
 
-%include 'real_mode_print.inc'
+%include 'real_mode/real_mode_print.inc'
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
