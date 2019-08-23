@@ -1,5 +1,11 @@
 [bits 16]
-                                
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Disable interrupts using the cli(clear interrupt)instruction, which
+;;; means the CPU will simply ignore any future interrupts that may
+;;; happen, at least until interrupts are later enabled.  
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                  
 Switch_To_Protected_Mode:
     cli                         ;;; Disable interrupts
     lgdt [GDT_Descriptor]       ;;; Load the GDT descriptor
