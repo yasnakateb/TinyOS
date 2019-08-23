@@ -27,27 +27,27 @@ Bios_Print_Hex:
     pusha
     mov cx, 0
 
-hex_loop:
+Hex_Loop:
     cmp cx, 4 
-    je end
+    je End
     mov ax, dx 
     and ax, 0x000f 
     add al, 0x30 
     cmp al, 0x39 
-    jle position
+    jle Position
     add al, 7 
 
-position:
+Position:
     mov bx, hex_number + 5 
     sub bx, cx  
     mov [bx], al
     ror dx, 4 
     add cx, 1
-    jmp hex_loop
+    jmp Hex_Loop
 
-end:
+End:
     mov bx, hex_number
-    call Bios_Print
+    call Real_Mode_Print
 
     popa
     ret
