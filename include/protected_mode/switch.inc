@@ -5,13 +5,13 @@
 ;;; means the CPU will simply ignore any future interrupts that may
 ;;; happen, at least until interrupts are later enabled.  
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-                  
+
 Switch_To_Protected_Mode:
     cli                         ;;; Disable interrupts
     lgdt [GDT_Descriptor]       ;;; Load the GDT descriptor
     mov eax, cr0                ;;; The CPU control register ==> cr0
     or eax, 0x1                 ;;; Set 32-bit mode bit in cr0
-    mov cr0, eax
+    mov cr0, eax                ;;; After cr0 has been updated, the CPU is in 32-bit protected mode
     jmp CODE_SEGMENT:Protected_Mode     
 
 [bits 32]
