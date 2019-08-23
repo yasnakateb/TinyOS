@@ -36,6 +36,9 @@ start:
 
 
 %include 'real_mode/real_mode_print.inc'
+%include 'protected_mode/32_bit_print.inc'
+%include 'protected_mode/switch.inc'
+%include 'protected_mode/gdt.inc'
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
