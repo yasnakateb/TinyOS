@@ -11,8 +11,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 Disk_Load:
-    mov bx , msg_Sector_ERROR
-    call Real_Mode_Print
     pusha
     push dx
 
