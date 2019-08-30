@@ -68,7 +68,7 @@ Begin_Protected_Mode:           ;;; After the switch we will get here
 ;;; MESSAGES
 ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
+    BOOT_DRIVE db 0 
     msg_Real_Mode db "Real mode", 0
     msg_Protected_Mode db "Protected mode", 0 
     msg_Load_Kernel db "Loading  kernel  into  memory.", 0  
