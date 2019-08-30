@@ -5,8 +5,9 @@
 ;;; Machine starts in Real Mode. Then it switches from 16-bit real mode 
 ;;; into 32-bit protected mode.
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
+                                
 [org 0x7c00]
+KERNEL_OFFSET  equ 0x1000       ;;; This is the  memory  offset  to which  we will  load  our  kernel
 
 Start:
     mov bp, 0x9000                      
