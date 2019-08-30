@@ -22,11 +22,11 @@ KERNEL_OFFSET  equ 0x1000       ;;; This is the  memory  offset  to which  we wi
     jmp $
 
 
+%include 'include/real_mode/disk.inc'
 %include 'include/real_mode/real_mode_print.inc'
+%include 'include/protected_mode/gdt.inc'
 %include 'include/protected_mode/32_bit_print.inc'
 %include 'include/protected_mode/switch.inc'
-%include 'include/protected_mode/gdt.inc'
-%include 'include/real_mode/disk.inc'
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -46,9 +46,6 @@ Load_Kernel:
     call Disk_Load              ;;; INT 0x13
     ret
 
-
-
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
 ;;; 32-bit Protected Mode
@@ -56,6 +53,7 @@ Load_Kernel:
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
                                                                 
 [bits 32]
+
 Begin_Protected_Mode:           ;;; After the switch we will get here
     mov ebx, msg_Protected_Mode
     call Protected_Mode_Print
@@ -67,6 +65,7 @@ Begin_Protected_Mode:           ;;; After the switch we will get here
 ;;; MESSAGES
 ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
     BOOT_DRIVE db 0 
     msg_Real_Mode db "Real mode", 0
     msg_Protected_Mode db "Protected mode", 0 
