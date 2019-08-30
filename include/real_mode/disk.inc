@@ -20,7 +20,8 @@ Disk_Load:
     mov ch, 0x00                
     mov dh, 0x00                
     int 0x13                     ;;; BIOS interrupt
-    jc  Disk_Error               
+    jc  Disk_Error               ;;; If error (stored in the carry bit)
+
 
     pop dx
     cmp al, dh                  
