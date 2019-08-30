@@ -21,7 +21,6 @@ uint16 vga_entry(unsigned char ch, uint8 fore_color, uint8 back_color)
     return ax;                  
 }
 
-
 /* 
  * Clear video buffer array 
  */                                                                       
@@ -34,7 +33,6 @@ void clear_vga_buffer(uint16 **buffer, uint8 fore_color, uint8 back_color)
     }
 }
 
-                                                            
 /*
  * Initialize vga buffer
  */
@@ -43,6 +41,7 @@ void init_vga(uint8 fore_color, uint8 back_color)
     vga_buffer = (uint16*)VGA_ADDRESS;                        // Point vga_buffer pointer to VGA_ADDRESS 
     clear_vga_buffer(&vga_buffer, fore_color, back_color);    // Clear buffer
 }
+
 
 void main()
 {
