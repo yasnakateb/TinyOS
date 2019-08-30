@@ -11,6 +11,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 Disk_Load:
+    mov bx , msg_Sector_ERROR
+    call Real_Mode_Print
     pusha
     push dx
 
@@ -31,14 +33,14 @@ Disk_Load:
 
 Disk_Error:
     mov bx, msg_Disk_ERROR
-    call Bios_Print
+    call Real_Mode_Print
     mov dh, ah                  ;;; ah = Error code
     call Bios_Print_Hex        
     jmp Disk_Loop
 
 Sectors_Error:
     mov bx, msg_Sector_ERROR
-    call Bios_Print
+    call Real_Mode_Print
 
 Disk_Loop:
     jmp $
