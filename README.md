@@ -7,10 +7,11 @@
 
 ### Todo
 
-- [x]   Boot from scratch
-- [ ]   Create a simple Kernel In C
+- ✅   Boot from scratch
+- ✅   Create a simple Kernel In C
 
 
 
  
+
 
