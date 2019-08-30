@@ -9,7 +9,6 @@
 [org 0x7c00]
 KERNEL_OFFSET  equ 0x1000       ;;; This is the  memory  offset  to which  we will  load  our  kernel
 
-Start:
     mov [BOOT_DRIVE], dl        ;;; Stores boot  drive (INT 0x13)
     mov bp, 0x9000                      
     mov sp, bp
@@ -40,9 +39,9 @@ Start:
 
 Load_Kernel:
     mov bx, msg_Load_Kernel     ;;; Load kernel
-    call msg_Load_Kernel
+    call Real_Mode_Print
     mov bx, KERNEL_OFFSET       ;;; Read from disk and store in 0x1000
-    mov dh, 15                  ;;; Load  the  first  15  sectors 
+    mov dh, 2                   ;;; Load  the  first 2 sectors 
     mov dl, [BOOT_DRIVE]        ;;; Drive number      
     call Disk_Load              ;;; INT 0x13
     ret
