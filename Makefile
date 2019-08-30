@@ -3,8 +3,7 @@ BOOT=src/boot/boot.asm
 KERNEL=src/kernel/kernel.c
 KERNEL_ENTRY=src/kernel/kernel_entry.asm
 INCLUDE=include/
-BIN=bin/
-BUILD=build/
+BIN=bin
 
 #TOOLS
 EMULATOR=qemu-system-x86_64
@@ -15,7 +14,7 @@ LINKER=i386-elf-ld
 #TOOL OPTIONS
 EFLAGS=-boot c 						# EMULATOR FLAG
 FORMAT=bin 
-CCFLAGS=-ffreestanding -c 			# CROSS  COMPILER ==> To compile system-independent code
+CCFLAGS=-ffreestanding -c 			# CROSS COMPILER ==> To compile system-independent code
 								
 #TOOL OUTPUT
 BOOT_SECT=bin/boot_sect.bin
@@ -24,21 +23,21 @@ OS = bin/os_image.bin
 
 ###############################################################################
 
-run: $(OS)
+run:  $(OS)
 	$(EMULATOR) -fda $<
 
-os_image.bin: $(BOOT_SECT)  $(MAIN_KERNEL)
-	cat $^ > $(BIN)$@
+$(OS): $(BOOT_SECT)  $(MAIN_KERNEL)
+	cat $^ > $@
 
-boot_sect.bin: $(BOOT)
-	$(NASM) $< -f $(FORMAT) -o $(BIN)/$@
+$(BOOT_SECT): $(BOOT)
+	$(NASM) $< -f $(FORMAT) -o $@
 
-kernel.bin: $(BUILD)/kernel_entry.o $(BUILD)/kernel.o
-	$(LINKER) -o $(BIN)/$@ -Ttext 0x1000 $^ --oformat binary
+$(MAIN_KERNEL): kernel_entry.o kernel.o
+	$(LINKER) -o $@ -Ttext 0x1000 $^ --oformat binary
 
 kernel.o: $(KERNEL)
-	$(CROSSCOMPILER) $(CCFLAGS) $< -o $(BUILD)/$@
+	$(CROSSCOMPILER) $(CCFLAGS) $< -o $@
 
 kernel_entry.o: $(KERNEL_ENTRY)
-	$(NASM) $< -f elf -o $(BUILD)/$@
+	$(NASM) $< -f elf -o  $@
 
