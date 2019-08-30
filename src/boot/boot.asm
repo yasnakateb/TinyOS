@@ -60,7 +60,8 @@ Load_Kernel:
 Begin_Protected_Mode:           ;;; After the switch we will get here
     mov ebx, msg_Protected_Mode
     call Protected_Mode_Print
-    jmp $
+    call KERNEL_OFFSET          ;;; Give control to the kernel
+    jmp $ 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
