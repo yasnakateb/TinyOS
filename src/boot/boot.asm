@@ -10,6 +10,7 @@
 KERNEL_OFFSET  equ 0x1000       ;;; This is the  memory  offset  to which  we will  load  our  kernel
 
 Start:
+    mov [BOOT_DRIVE], dl        ;;; Stores boot  drive (INT 0x13)
     mov bp, 0x9000                      
     mov sp, bp
 
