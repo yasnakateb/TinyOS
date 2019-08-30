@@ -45,7 +45,6 @@ void init_vga(uint8 fore_color, uint8 back_color)
 
 void main()
 {
-  
     init_vga(COLOR_BLACK, COLOR_WHITE);
   
     vga_buffer[0] = vga_entry('H', COLOR_RED, COLOR_BLACK);
