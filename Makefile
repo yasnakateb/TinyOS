@@ -12,9 +12,9 @@ CROSSCOMPILER= i386-elf-gcc
 LINKER=i386-elf-ld
 
 #TOOL OPTIONS
-EFLAGS=-boot c 						# EMULATOR FLAG
+EFLAGS=-boot c 				        ### EMULATOR FLAG
 FORMAT=bin 
-CCFLAGS=-ffreestanding -c 			# CROSS COMPILER ==> To compile system-independent code
+CCFLAGS=-ffreestanding -c 			### CROSS COMPILER ==> To compile system-independent code
 								
 #TOOL OUTPUT
 BOOT_SECT=bin/boot_sect.bin
