@@ -23,6 +23,7 @@ Start:
 %include 'include/protected_mode/32_bit_print.inc'
 %include 'include/protected_mode/switch.inc'
 %include 'include/protected_mode/gdt.inc'
+%include 'include/real_mode/disk.inc'
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
